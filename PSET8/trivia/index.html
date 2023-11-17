@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+  <link href="styles.css" rel="stylesheet">
+  <title>Trivia!</title>
+</head>
+<body>
+  <div class="header">
+    <h1>Trivia!</h1>
+  </div>
+
+  <div class="container">
+    <div class="section">
+      <h2>Part 1: Multiple Choice</h2>
+      <hr>
+      <h3>Which is the largest ocean in the world?</h3>
+      <button type="button" id="multipleChoiceAnswer1">Atlantic Ocean</button>
+      <button type="button" id="multipleChoiceAnswer2">Pacific Ocean</button>
+      <button type="button" id="multipleChoiceAnswer3">Indian Ocean</button>
+      <button type="button" id="multipleChoiceAnswer4">Arctic Ocean</button>
+      <p id="multipleChoiceFeedback"></p>
+    </div>
+
+    <div class="section">
+      <h2>Part 2: Free Response</h2>
+      <hr>
+      <h3>What is the capital of Iran?</h3>
+      <input type="text" id="freeResponseAnswer">
+      <button type="button" id="freeResponseConfirmAnswer">Confirm Answer</button>
+      <p id="freeResponseFeedback"></p>
+    </div>
+  </div>
+
+  <script>
+    // Get all of the multiple choice answer buttons
+    const multipleChoiceAnswerButtons = document.querySelectorAll("#multipleChoiceAnswer1, #multipleChoiceAnswer2, #multipleChoiceAnswer3, #multipleChoiceAnswer4");
+
+    // Add a click event listener to each multiple choice answer button
+    multipleChoiceAnswerButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        // Check if the answer is correct
+        if (button.id === "multipleChoiceAnswer2") {
+          // The answer is correct
+          button.classList.add("correct");
+          document.querySelector("#multipleChoiceFeedback").textContent = "Correct!";
+        } else {
+          // The answer is incorrect
+          button.classList.add("incorrect");
+          document.querySelector("#multipleChoiceFeedback").textContent = "Incorrect. The correct answer is the Pacific Ocean.";
+        }
+      });
+    });
+
+    // Get the free response confirm answer button
+    const freeResponseConfirmAnswerButton = document.querySelector("#freeResponseConfirmAnswer");
+
+    // Add a click event listener to the free response confirm answer button
+    freeResponseConfirmAnswerButton.addEventListener("click", () => {
+      // Get the user's answer
+      const answer = document.querySelector("#freeResponseAnswer").value;
+
+      // Check if the answer is correct
+      if (answer === "Tehran") {
+        // The answer is correct
+        document.querySelector("#freeResponseAnswer").classList.add("correct");
+        document.querySelector("#freeResponseFeedback").textContent = "Correct!";
+      } else {
+        // The answer is incorrect
+        document.querySelector("#freeResponseAnswer").classList.add("incorrect");
+        document.querySelector("#freeResponseFeedback").textContent = "Incorrect. The correct answer is Tehran.";
+      }
+    });
+  </script>
+</body>
+</html>
