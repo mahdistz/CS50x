@@ -1,6 +1,6 @@
 # CS50’s Introduction to Computer Science
 
-[![Certificate](./photos/CS50x_certificate.png)](https://certificates.cs50.io/16b88e0a-2d1f-4347-8f90-7ce6ab05fa83.pdf?size=A4)
+[![Certificate](./photos/CS50x_certificate.png)](https://certificates.cs50.io/bf00b46e-a724-47b7-8fd4-b08bf2dc8ae2.pdf?size=A4)
 
 ### These are my solutions for [CS50's Introduction to Computer Science 2023](https://cs50.harvard.edu/x/2023/).
 
